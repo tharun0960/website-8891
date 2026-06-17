@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charan Electronics & Sounds</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7f9fc;
+    color:#333;
+}
+
+:root{
+    --primary:#0f172a;
+    --secondary:#1e40af;
+    --accent:#f59e0b;
+    --white:#ffffff;
+}
+
+/* Header */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo{
+    color:white;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.8)),
+    url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:40px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero-content span{
+    color:var(--accent);
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Sections */
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* About */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h3{
+    color:var(--secondary);
+    margin-bottom:15px;
+}
+
+/* Services */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-card h3{
+    color:var(--secondary);
+    margin-bottom:10px;
+}
+
+/* Features */
+.features{
+    background:var(--primary);
+    color:white;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.feature-box{
+    text-align:center;
+    padding:25px;
+}
+
+.feature-box h3{
+    color:var(--accent);
+}
+
+/* Gallery */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* Contact */
+.contact{
+    background:#eef3ff;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+.contact-info h3{
+    margin-bottom:15px;
+    color:var(--secondary);
+}
+
+.map iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:15px;
+}
+
+/* Footer */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* WhatsApp */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+.about,
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.hero-content h1{
+    font-size:2.6rem;
+}
+
+.nav-links{
+    display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+<div class="logo">Charan <span>Electronics & Sounds</span></div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Charan <span>Electronics & Sounds</span></h1>
+<p>
+Professional Sound Systems, Electronics Sales, Installation,
+Repair & Maintenance Services. Delivering Quality Audio Solutions
+for Homes, Businesses & Events.
+</p>
+
+<a href="#contact" class="btn">Contact Us</a>
+</div>
+</section>
+
+<section id="about">
+<div class="section-title">
+<h2>About Us</h2>
+<p>Your trusted electronics and sound solutions provider.</p>
+</div>
+
+<div class="about">
+<img src="https://images.unsplash.com/photo-1558089687-f282ffcbc0d4?auto=format&fit=crop&w=1200&q=80">
+
+<div class="about-text">
+<h3>Welcome to Charan Electronics & Sounds</h3>
+
+<p>
+We specialize in high-quality electronics, professional sound systems,
+audio equipment, installation services, repairs, and maintenance.
+Our goal is to provide reliable products and exceptional customer service.
+</p>
+
+<br>
+
+<p>
+Whether you need speakers, amplifiers, DJ sound systems,
+home theatre setups, or technical support, we are here to help.
+</p>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Professional electronics and sound solutions.</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>🔊 Sound Systems</h3>
+<p>DJ Systems, PA Systems, Event Audio Setup and Professional Sound Equipment.</p>
+</div>
+
+<div class="service-card">
+<h3>🎵 Speakers & Amplifiers</h3>
+<p>Premium speakers, amplifiers and audio accessories for every need.</p>
+</div>
+
+<div class="service-card">
+<h3>🏠 Home Theatre Setup</h3>
+<p>Complete home entertainment and theatre installation solutions.</p>
+</div>
+
+<div class="service-card">
+<h3>🛠 Repair Services</h3>
+<p>Fast and reliable electronics and sound equipment repairs.</p>
+</div>
+
+</div>
+</section>
+
+<section class="features">
+<div class="section-title">
+<h2 style="color:white;">Why Choose Us?</h2>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+<h3>100%</h3>
+<p>Customer Satisfaction</p>
+</div>
+
+<div class="feature-box">
+<h3>Quality</h3>
+<p>Trusted Products</p>
+</div>
+
+<div class="feature-box">
+<h3>Support</h3>
+<p>Technical Assistance</p>
+</div>
+
+<div class="feature-box">
+<h3>Affordable</h3>
+<p>Competitive Pricing</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-title">
+<h2>Gallery</h2>
+<p>Our products and installations.</p>
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1507878866276-a947ef722fee?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="section-title">
+<h2>Contact Us</h2>
+<p>Get in touch with us today.</p>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-info">
+<h3>Charan Electronics & Sounds</h3>
+
+<p><strong>📍 Address:</strong> Gudivada, Andhra Pradesh</p>
+<br>
+
+<p><strong>📞 Phone:</strong> +91 XXXXX XXXXX</p>
+<br>
+
+<p><strong>📧 Email:</strong> info@charanelectronics.com</p>
+<br>
+
+<p><strong>⏰ Hours:</strong> Monday - Sunday</p>
+</div>
+
+<div class="map">
+<iframe
+src="https://www.google.com/maps/embed?pb="
+allowfullscreen=""
+loading="lazy">
+</iframe>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Charan Electronics & Sounds. All Rights Reserved.</p>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
+
+</body>
+</html>
